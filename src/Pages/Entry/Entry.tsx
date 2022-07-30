@@ -1,6 +1,6 @@
 //Interfaces
 interface EntryProps {
-    match: any
+    match?: any
 }
 
 import { dataFormat } from '../../Data/data'
@@ -27,19 +27,32 @@ const Entry = (props: EntryProps): JSX.Element => {
     )
 
     const entryURL = props.match.params.entryURL
-    /* Undefined needs to be removed */
-    const entrySelected: dataFormatWithDate | undefined = data.find(
+    const entryIndex: number = data.findIndex(
         (entry: dataFormatWithDate): boolean => entry.dateTimeID === entryURL
     )
-    
-    return (
-        <>
-            <h1>{entrySelected.title}</h1>
-            <span>{entrySelected.date} {entrySelected.time}</span>
-            <p>{entrySelected.content}</p>
-            { "footnotes" in entrySelected && <p>{entrySelected.footnotes}</p> }
-        </>
-    )
+
+    let entrySelected: dataFormatWithDate
+
+    if(entryIndex !== -1) {
+        entrySelected= data[entryIndex]
+        return (
+            <>
+                <h1>{entrySelected.title}</h1>
+                <span>{entrySelected.date} {entrySelected.time}</span>
+                <p>{entrySelected.content}</p>
+                { "footnotes" in entrySelected && <p>{entrySelected.footnotes}</p> }
+            </>
+        )
+    }
+
+    else {
+        return (
+            <>
+                <h1>Entry not found</h1>
+                <p>The entry you are looking for does not exist.</p>
+            </>
+        )
+    }
 }
 
 export default Entry
