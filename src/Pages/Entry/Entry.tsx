@@ -1,7 +1,10 @@
+//Router Parameters
+import { useParams } from 'react-router-dom'
+
 //Interfaces
-interface EntryProps {
-    match?: any
-}
+// interface EntryProps {
+//     match: any
+// }
 
 import { dataFormat } from '../../Data/data'
 
@@ -13,7 +16,7 @@ interface dataFormatWithDate extends dataFormat {
 //Data
 import payload from '../../Data/data'
 
-const Entry = (props: EntryProps): JSX.Element => {
+const Entry = (): JSX.Element => {
     const data: dataFormatWithDate[] = payload.map(
         (entry: dataFormat): dataFormatWithDate => {
             const dateMix: string = entry.dateTimeID.toString()
@@ -26,9 +29,13 @@ const Entry = (props: EntryProps): JSX.Element => {
         }
     )
 
-    const entryURL = props.match.params.entryURL
+    const { entryURL } = useParams()
+
+    if(entryURL === undefined)
+        return <div>404</div>
+
     const entryIndex: number = data.findIndex(
-        (entry: dataFormatWithDate): boolean => entry.dateTimeID === entryURL
+        (entry: dataFormatWithDate): boolean => entry.dateTimeID === +entryURL
     )
 
     let entrySelected: dataFormatWithDate
