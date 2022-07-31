@@ -11,15 +11,19 @@ import EntriesList from "../../Pages/EntriesList/EntriesList"
 import Entry from "../../Pages/Entry/Entry"
 
 const App = (): JSX.Element => (
-    <Router>
-        <Navbar />
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/all" element={<EntriesList />} />
-            <Route path="/entry/:entryURL" element={<Entry />} />
-        </Routes>
-    </Router>
+    <div className="
+        bg-red-500
+    ">
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/all" element={<EntriesList />} />
+                <Route path="/entry/:entryURL" element={<Entry />} />
+            </Routes>
+        </Router>
+    </div>
 )
 
 export default App

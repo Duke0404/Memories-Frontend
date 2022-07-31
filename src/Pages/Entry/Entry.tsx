@@ -1,14 +1,9 @@
 //Router Parameters
 import { useParams } from 'react-router-dom'
 
-//Interfaces
-// interface EntryProps {
-//     match: any
-// }
-
 import { dataFormat } from '../../Data/data'
 
-interface dataFormatWithDate extends dataFormat {
+export interface dataFormatWithDate extends dataFormat {
     date: string
     time: string
 }
