@@ -1,6 +1,7 @@
 //Router Parameters
 import { useParams } from 'react-router-dom'
 
+//Interfaces
 import { dataFormat } from '../../Data/data'
 
 export interface dataFormatWithDate extends dataFormat {
@@ -10,6 +11,9 @@ export interface dataFormatWithDate extends dataFormat {
 
 //Data
 import payload from '../../Data/data'
+
+//Pages
+import NotFound from '../NotFound/NotFound'
 
 const Entry = (): JSX.Element => {
     const data: dataFormatWithDate[] = payload.map(
@@ -26,35 +30,22 @@ const Entry = (): JSX.Element => {
 
     const { entryURL } = useParams()
 
-    if(entryURL === undefined)
-        return <div>404</div>
+    if(entryURL === undefined || data.findIndex((entry: dataFormatWithDate): boolean => entry.dateTimeID === +entryURL) === -1)
+        return <NotFound />
 
     const entryIndex: number = data.findIndex(
         (entry: dataFormatWithDate): boolean => entry.dateTimeID === +entryURL
     )
+    const entrySelected: dataFormatWithDate = data[entryIndex]
 
-    let entrySelected: dataFormatWithDate
-
-    if(entryIndex !== -1) {
-        entrySelected= data[entryIndex]
-        return (
-            <>
-                <h1>{entrySelected.title}</h1>
-                <span>{entrySelected.date} {entrySelected.time}</span>
-                <p>{entrySelected.content}</p>
-                { "footnotes" in entrySelected && <p>{entrySelected.footnotes}</p> }
-            </>
-        )
-    }
-
-    else {
-        return (
-            <>
-                <h1>Entry not found</h1>
-                <p>The entry you are looking for does not exist.</p>
-            </>
-        )
-    }
+    return (
+        <>
+            <h1>{entrySelected.title}</h1>
+            <span>{entrySelected.date} {entrySelected.time}</span>
+            <p>{entrySelected.content}</p>
+            { "footnotes" in entrySelected && <p>{entrySelected.footnotes}</p> }
+        </>
+    )
 }
 
 export default Entry

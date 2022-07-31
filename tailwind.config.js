@@ -14,6 +14,10 @@ module.exports = {
 				"text-1" : "var(--text-1)",
 				"background-1" : "var(--background-1)",
 			},
+
+			fontFamily: {
+				title: ["Italianno", "cursive"]
+			},
 		},
 	},
 	plugins: [],
