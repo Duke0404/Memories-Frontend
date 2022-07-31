@@ -11,7 +11,9 @@ module.exports = {
 				"accent-secondary-1" : "var(--accent-secondary-1)",
 				"accent-secondary-2" : "var(--accent-secondary-2)",
 				"accent-secondary-3" : "var(--accent-secondary-3)",
-			}
+				"text-1" : "var(--text-1)",
+				"background-1" : "var(--background-1)",
+			},
 		},
 	},
 	plugins: [],

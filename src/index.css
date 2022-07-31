@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+:root {
     --accent-primary-1: #FFCC33;
     --accent-primary-2: #F3D643;
     --accent-primary-3: #FFAE42;
@@ -10,4 +12,12 @@
     --accent-secondary-1: #29B2A0;
     --accent-secondary-2: #046E94;
     --accent-secondary-3: #073376;
+
+    --text-1: #000;
+
+    --background-1: #ffe186;
+}
+
+body {
+    background-color: var(--background-1);
 }

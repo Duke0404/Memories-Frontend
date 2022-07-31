@@ -12,9 +12,16 @@ import Entry from "../../Pages/Entry/Entry"
 
 const App = (): JSX.Element => (
     <div className="
-        bg-red-500
+        bg-background-1
     ">
         <Router>
+            <h1
+                className="
+                    text-3xl
+                    font-['Dancing Script']
+                    font-bold
+                "
+            >Memories</h1>
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />

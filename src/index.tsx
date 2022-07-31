@@ -2,6 +2,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 
+//Styles
+import "./index.css"
+
 //Components
 import App from "./Components/App/App"
 
