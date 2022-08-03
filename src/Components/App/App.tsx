@@ -12,7 +12,9 @@ import Entry from "../../Pages/Entry/Entry"
 import NotFound from "../../Pages/NotFound/NotFound"
 
 const App = (): JSX.Element => (
-    <>
+    <main
+        className="px-8"
+    >
         <BrowserRouter>
             <h1
                 className="
@@ -33,7 +35,7 @@ const App = (): JSX.Element => (
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
-    </>
+    </main>
 )
 
 export default App

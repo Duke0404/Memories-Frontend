@@ -17,8 +17,9 @@ const Navbar = (): JSX.Element => (
                     border-b
                     border-text-1
                     cursor-pointer
-                    hover:bg-accent-primary-4
-                    active:bg-accent-secondary-2
+                    hover:border-accent-secondary-2
+                    hover:border-b-2
+                    active:border-accent-secondary-1
                 "
             >
                 <Link to="/">Home</Link>
@@ -32,8 +33,9 @@ const Navbar = (): JSX.Element => (
                     border-b
                     border-text-1
                     cursor-pointer
-                    hover:bg-accent-primary-4
-                    active:bg-accent-secondary-2
+                    hover:border-accent-secondary-2
+                    hover:border-b-2
+                    active:border-accent-secondary-1
                 "
             >
                 <Link to="/about">About</Link>
@@ -47,8 +49,9 @@ const Navbar = (): JSX.Element => (
                     border-b
                     border-text-1
                     cursor-pointer
-                    hover:bg-accent-primary-4
-                    active:bg-accent-secondary-2
+                    hover:border-accent-secondary-2
+                    hover:border-b-2
+                    active:border-accent-secondary-1
                 "
             >
                 <Link to="/all">All Entries</Link>
