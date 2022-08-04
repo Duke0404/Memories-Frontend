@@ -1,6 +1,9 @@
 //Router links
 import { Link } from "react-router-dom"
 
+//Icons
+import { GrHome, GrCircleInformation, GrFlows } from "react-icons/gr"
+
 const Navbar = (): JSX.Element => (
     <nav
         className="
@@ -22,7 +25,9 @@ const Navbar = (): JSX.Element => (
                     active:border-accent-secondary-1
                 "
             >
-                <Link to="/">Home</Link>
+                <Link to="/">
+                    <GrHome className="inline mb-0.5" /> Home
+                </Link>
             </li>
 
             <li
@@ -38,7 +43,9 @@ const Navbar = (): JSX.Element => (
                     active:border-accent-secondary-1
                 "
             >
-                <Link to="/about">About</Link>
+                <Link to="/about">
+                    <GrCircleInformation className="inline mb-0.5" /> About
+                </Link>
             </li>
 
             <li
@@ -54,7 +61,9 @@ const Navbar = (): JSX.Element => (
                     active:border-accent-secondary-1
                 "
             >
-                <Link to="/all">All Entries</Link>
+                <Link to="/all">
+                    <GrFlows className="inline mb-0.5" /> All Entries
+                </Link>
             </li>
         </ul>
     </nav>
