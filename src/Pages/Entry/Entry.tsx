@@ -40,10 +40,40 @@ const Entry = (): JSX.Element => {
 
     return (
         <>
-            <h1>{entrySelected.title}</h1>
-            <span>{entrySelected.date} {entrySelected.time}</span>
+            <h2
+                className="
+                    text-2xl
+                    font-semibold
+                "
+            >
+                {entrySelected.title}
+            </h2>
+
+            <span
+                className="
+                    italic
+                    font-semibold
+                    text-accent-primary-4
+                "
+            >
+                {entrySelected.date} {entrySelected.time}
+            </span>
+
             <p>{entrySelected.content}</p>
-            { "footnotes" in entrySelected && <p>{entrySelected.footnotes}</p> }
+
+            {
+                "footnotes" in entrySelected &&
+                <p
+                    className="
+                    mt-2
+                    pt-2
+                    border-t
+                    border-text-1
+                "
+                >
+                    {entrySelected.footnotes}
+                </p>
+            }
         </>
     )
 }
