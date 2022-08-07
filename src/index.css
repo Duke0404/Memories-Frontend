@@ -2,22 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-background-1;
+    @apply dark:bg-background-1-dark;
+    @apply text-text-1;
+    @apply dark:text-text-1-dark;
+  }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
-
-:root {
-    --accent-primary-1: #FFCC33;
-    --accent-primary-2: #F3D643;
-    --accent-primary-3: #FFAE42;
-    --accent-primary-4: #C36721;
-    --accent-secondary-1: #29B2A0;
-    --accent-secondary-2: #046E94;
-    --accent-secondary-3: #073376;
-
-    --text-1: #000;
-
-    --background-1: #ffe186;
-}
-
-body {
-    background-color: var(--background-1);
-}

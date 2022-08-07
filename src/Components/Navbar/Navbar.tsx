@@ -19,6 +19,7 @@ const Navbar = (): JSX.Element => (
                     pb-1.5
                     border-b
                     border-text-1
+                    dark:border-text-1-dark
                     cursor-pointer
                     hover:border-accent-secondary-2
                     hover:border-b-2
@@ -26,7 +27,7 @@ const Navbar = (): JSX.Element => (
                 "
             >
                 <Link to="/">
-                    <GrHome className="inline mb-0.5" /> Home
+                    <GrHome className="inline mb-0.5 text-text-1 dark:text-text-1-dark" /> Home
                 </Link>
             </li>
 
@@ -37,6 +38,7 @@ const Navbar = (): JSX.Element => (
                     pb-1.5
                     border-b
                     border-text-1
+                    dark:border-text-1-dark
                     cursor-pointer
                     hover:border-accent-secondary-2
                     hover:border-b-2
@@ -55,6 +57,7 @@ const Navbar = (): JSX.Element => (
                     pb-1.5
                     border-b
                     border-text-1
+                    dark:border-text-1-dark
                     cursor-pointer
                     hover:border-accent-secondary-2
                     hover:border-b-2
