@@ -1,3 +1,7 @@
+//React Stuff
+    //Import useState & useEffect
+import { useState, useEffect } from 'react';
+
 //Router Parameters
 import { useParams } from 'react-router-dom'
 
@@ -7,6 +11,12 @@ import { dataFormat } from '../../Data/data'
 export interface dataFormatWithDate extends dataFormat {
     date: string
     time: string
+}
+
+    //Interface for  entryInfo
+interface entryInfoInterface {
+    upvotes: number
+    comments: {username: string, comment: string}[]
 }
 
 //Data
@@ -30,13 +40,39 @@ const Entry = (): JSX.Element => {
 
     const { entryURL } = useParams()
 
-    if(entryURL === undefined || data.findIndex((entry: dataFormatWithDate): boolean => entry.dateTimeID === +entryURL) === -1)
+    if(!entryURL || data.findIndex((entry: dataFormatWithDate): boolean => entry.dateTimeID === +entryURL) === -1)
         return <NotFound />
 
     const entryIndex: number = data.findIndex(
         (entry: dataFormatWithDate): boolean => entry.dateTimeID === +entryURL
     )
     const entrySelected: dataFormatWithDate = data[entryIndex]
+
+    // entryInfo default value
+    const entryInfoDefault: entryInfoInterface = {
+        upvotes: 0,
+        comments: [],
+    }
+
+    //States
+        //State to hold entry upvotes & comments
+    const [entryInfo, setEntryInfo] = useState(entryInfoDefault)
+
+    //Effects
+        //Effect to load entry info
+    useEffect(
+        (): void => {
+            const fetchInfo = async (): Promise<void> => {
+                const response: Response = await fetch(`/api/entry/${entryURL}`)
+                const newInfo: entryInfoInterface = await response.json()
+
+                setEntryInfo(newInfo)
+            }
+
+            fetchInfo()
+        },
+        [entryURL]
+    )
 
     return (
         <>
@@ -74,6 +110,10 @@ const Entry = (): JSX.Element => {
                     {entrySelected.footnotes}
                 </p>
             }
+
+            <div>
+                <button /> {entryInfo.upvotes}
+            </div>
         </>
     )
 }
