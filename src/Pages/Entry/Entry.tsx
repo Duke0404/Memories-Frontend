@@ -14,16 +14,22 @@ export interface dataFormatWithDate extends dataFormat {
 }
 
     //Interface for  entryInfo
-interface entryInfoInterface {
+export interface entryInfoInterface {
     upvotes: number
     comments: {username: string, comment: string}[]
 }
 
-//Data
+// Data
 import payload from '../../Data/data'
 
-//Pages
+// Pages
 import NotFound from '../NotFound/NotFound'
+
+// Components
+    // Import CommentsList
+import CommentsList from '../../Components/CommentsList/CommentsList'
+    // Import UpvoteSection
+import UpvoteSection from '../../Components/UpvoteSection/UpvoteSection'
 
 const Entry = (): JSX.Element => {
     const data: dataFormatWithDate[] = payload.map(
@@ -63,7 +69,7 @@ const Entry = (): JSX.Element => {
     useEffect(
         (): void => {
             const fetchInfo = async (): Promise<void> => {
-                const response: Response = await fetch(`/api/entry/${entryURL}`)
+                const response: Response = await fetch(`/api/entries/${entryURL}`)
                 const newInfo: entryInfoInterface = await response.json()
 
                 setEntryInfo(newInfo)
@@ -111,9 +117,15 @@ const Entry = (): JSX.Element => {
                 </p>
             }
 
-            <div>
-                <button /> {entryInfo.upvotes}
-            </div>
+            <UpvoteSection
+                entryURL={entryURL}
+                setEntryInfo={setEntryInfo}
+                upvotes={entryInfo.upvotes}
+            />
+
+            <CommentsList
+                comments={entryInfo.comments}
+            />
         </>
     )
 }

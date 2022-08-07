@@ -1,6 +1,3 @@
-//Router Links
-import { Link } from 'react-router-dom'
-
 //Data
 import payload from '../../Data/data'
 
