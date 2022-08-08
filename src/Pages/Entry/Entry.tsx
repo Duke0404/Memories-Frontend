@@ -96,6 +96,7 @@ const Entry = (): JSX.Element => {
                     italic
                     font-semibold
                     text-accent-primary-4
+                    dark:text-accent-secondary-1
                 "
             >
                 {entrySelected.date} {entrySelected.time}

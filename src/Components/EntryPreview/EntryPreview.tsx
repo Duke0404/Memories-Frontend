@@ -21,6 +21,7 @@ const EntryPreview = (props: EntryPreviewProps): JSX.Element => {
                 py-3
                 px-4
                 bg-accent-primary-3
+                dark:bg-accent-secondary-3
                 rounded-lg
             "
         >
@@ -48,6 +49,7 @@ const EntryPreview = (props: EntryPreviewProps): JSX.Element => {
                                 italic
                                 font-semibold
                                 text-accent-primary-4
+                                dark:text-accent-secondary-1
                             "
                         >
                             {
