@@ -112,7 +112,7 @@ const Entry = (): JSX.Element => {
                     pt-2
                     border-t
                     border-text-1
-                "
+                    "
                 >
                     {entrySelected.footnotes}
                 </p>
