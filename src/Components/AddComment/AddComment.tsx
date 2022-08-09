@@ -45,6 +45,9 @@ const AddComment = (props: entryInfoProps): JSX.Element => {
         const newInfo: entryInfoInterface = await response.json()
 
         props.setEntryInfo(newInfo)
+
+        setUsername("")
+        setCommentText("")
     }
 
     return (
