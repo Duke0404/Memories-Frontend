@@ -7,7 +7,14 @@ interface commentsInterface {
 
 const CommentsList = ({ comments }: {comments: commentsInterface[]}): JSX.Element => (
     <>
-        <h3>Comments</h3>
+        <h3
+            className="
+                text-xl
+                font-semibold
+            "
+        >
+            Comments
+        </h3>
 
         {
             comments.map(

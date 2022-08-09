@@ -13,65 +13,71 @@ const Navbar = (): JSX.Element => (
     >
         
         <ul className="flex gap-4">
-            <li
-                className="
-                    inline
-                    px-1.5
-                    pb-1.5
-                    border-b
-                    border-text-1
-                    text-text-1
-                    dark:bg-text-1-dark
-                    cursor-pointer
-                    hover:border-accent-secondary-2
-                    hover:border-b-2
-                    active:border-accent-secondary-1
-                "
-            >
-                <Link to="/">
+            <Link to="/">
+                <li
+                    className="
+                        inline
+                        px-2
+                        pb-1.5
+                        pt-1
+                        border-b
+                        border-text-1
+                        text-text-1
+                        dark:bg-text-1-dark
+                        cursor-pointer
+                        hover:border-accent-secondary-2
+                        hover:border-b-2
+                        active:border-accent-secondary-1
+                        rounded-lg
+                    "
+                >
                     <GrHome className="inline mb-0.5 text-text-1 dark:text-text-1-dark" /> Home
-                </Link>
-            </li>
+                </li>
+            </Link>
 
-            <li
-                className="
-                    inline
-                    px-1.5
-                    pb-1.5
-                    border-b
-                    border-text-1
-                    text-text-1
-                    dark:bg-text-1-dark
-                    cursor-pointer
-                    hover:border-accent-secondary-2
-                    hover:border-b-2
-                    active:border-accent-secondary-1
-                "
-            >
-                <Link to="/about">
+            <Link to="/about">
+                <li
+                    className="
+                        inline
+                        px-2
+                        pb-1.5
+                        pt-1
+                        border-b
+                        border-text-1
+                        text-text-1
+                        dark:bg-text-1-dark
+                        cursor-pointer
+                        hover:border-accent-secondary-2
+                        hover:border-b-2
+                        active:border-accent-secondary-1
+                        rounded-lg
+                    "
+                >
                     <GrCircleInformation className="inline mb-0.5" /> About
-                </Link>
-            </li>
+                </li>
+            </Link>
 
-            <li
-                className="
-                    inline
-                    px-1.5
-                    pb-1.5
-                    border-b
-                    border-text-1
-                    text-text-1
-                    dark:bg-text-1-dark
-                    cursor-pointer
-                    hover:border-accent-secondary-2
-                    hover:border-b-2
-                    active:border-accent-secondary-1
-                "
-            >
-                <Link to="/all">
+            <Link to="/all">
+                <li
+                    className="
+                        inline
+                        px-2
+                        pb-1.5
+                        pt-1
+                        border-b
+                        border-text-1
+                        text-text-1
+                        dark:bg-text-1-dark
+                        cursor-pointer
+                        hover:border-accent-secondary-2
+                        hover:border-b-2
+                        active:border-accent-secondary-1
+                        rounded-lg
+                    "
+                >
                         <GrFlows className="inline mb-0.5" /> All Entries
-                </Link>
-            </li>
+                </li>
+            </Link>
         </ul>
     </nav>
 )
