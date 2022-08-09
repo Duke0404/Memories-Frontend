@@ -30,6 +30,8 @@ import NotFound from '../NotFound/NotFound'
 import CommentsList from '../../Components/CommentsList/CommentsList'
     // Import UpvoteSection
 import UpvoteSection from '../../Components/UpvoteSection/UpvoteSection'
+    // Import AddComment
+import AddComment from '../../Components/AddComment/AddComment'
 
 const Entry = (): JSX.Element => {
     const data: dataFormatWithDate[] = payload.map(
@@ -127,6 +129,8 @@ const Entry = (): JSX.Element => {
             <CommentsList
                 comments={entryInfo.comments}
             />
+
+            <AddComment/>
         </>
     )
 }
