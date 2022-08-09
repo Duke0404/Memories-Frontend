@@ -13,10 +13,13 @@ export interface dataFormatWithDate extends dataFormat {
     time: string
 }
 
+    //Import commentInterface
+import { commentInterface } from '../../Components/AddComment/AddComment'
+
     //Interface for  entryInfo
 export interface entryInfoInterface {
     upvotes: number
-    comments: {username: string, comment: string}[]
+    comments: commentInterface[]
 }
 
 // Data
@@ -130,7 +133,10 @@ const Entry = (): JSX.Element => {
                 comments={entryInfo.comments}
             />
 
-            <AddComment/>
+            <AddComment
+                entryURL={entryURL}
+                setEntryInfo={setEntryInfo}
+            />
         </>
     )
 }

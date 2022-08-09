@@ -20,8 +20,8 @@ const CommentsList = ({ comments }: {comments: commentsInterface[]}): JSX.Elemen
             comments.map(
                 (comment: commentsInterface, key: number): JSX.Element => (
                     <div className="comment" key={key}>
-                        <h4>comment.username</h4>
-                        <p>comment.text</p>
+                        <h4>{comment.username}</h4>
+                        <p>{comment.comment}</p>
                     </div>
                 )
             )
